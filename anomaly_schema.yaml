@@ -1,0 +1,25 @@
+anomalies:
+  - name: error_spike
+    description: "Too many ERROR logs in short time"
+    severity: HIGH
+    how_to_detect: "If ERROR logs > 100 within 5 minutes"
+
+  - name: slow_response
+    description: "Service response time is too high"
+    severity: MEDIUM
+    how_to_detect: "If response time > 2 seconds for 10 requests"
+
+  - name: service_down
+    description: "Service stopped responding"
+    severity: HIGH
+    how_to_detect: "No logs received from service for 5 minutes"
+
+  - name: failed_logins
+    description: "Multiple failed login attempts"
+    severity: MEDIUM
+    how_to_detect: "If failed login attempts > 20 in 10 minutes"
+
+  - name: database_connection_issue
+    description: "Database connection pool exhausted"
+    severity: HIGH
+    how_to_detect: "If database connection errors appear repeatedly"

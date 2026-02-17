@@ -1,0 +1,52 @@
+log_entry:
+  description: "Standard application log format"
+
+  fields:
+    - name: timestamp
+      type: datetime
+      required: true
+      example: "2024-02-13 10:30:00"
+
+    - name: level
+      type: string
+      required: true
+      options: [INFO, WARNING, ERROR, DEBUG]
+      example: "ERROR"
+
+    - name: service
+      type: string
+      required: true
+      example: "payment-service"
+
+    - name: message
+      type: string
+      required: true
+      example: "Database connection failed"
+
+    - name: user_id
+      type: string
+      required: false
+      example: "user_123"
+
+    - name: ip_address
+      type: string
+      required: false
+      example: "192.168.1.10"
+
+examples:
+  - timestamp: "2024-02-13 14:23:45"
+    level: "INFO"
+    service: "auth-service"
+    message: "User logged in"
+    user_id: "user_101"
+
+  - timestamp: "2024-02-13 14:25:10"
+    level: "ERROR"
+    service: "payment-service"
+    message: "Payment failed"
+    user_id: "user_205"
+
+  - timestamp: "2024-02-13 14:26:00"
+    level: "WARNING"
+    service: "database-service"
+    message: "High CPU usage detected"
